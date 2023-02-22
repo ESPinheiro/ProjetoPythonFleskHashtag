@@ -1,4 +1,4 @@
-import sqlalchemy
+import sqlalchemyimport sqlalchemy
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
@@ -19,7 +19,9 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'alert-info'
 
+
 from comunidadeImpresionadora import models
+
 engine = sqlalchemy.create_engine( app.config['SQLALCHEMY_DATABASE_URI'])
 if not engine.has_table("usuario"):
     with app.app_context():
@@ -28,4 +30,4 @@ if not engine.has_table("usuario"):
         print('Base de Dados criado')
 else:
     print('Base de Dados já existente')
-from comunidadeImpresionadora import route
+from comunidadeImpresionadora import routeroute
