@@ -30,4 +30,4 @@ if not engine.has_table("usuario"):
         print('Base de Dados criado')
 else:
     print('Base de Dados já existente')
-from comunidadeImpresionadora import routeroute
+from comunidadeImpresionadora import route
